@@ -1,8 +1,8 @@
 import Banners from "../../components/Banners";
-import NameBalanceSection from "../../components/NameBalanceSection";
+import NameBalanceSection from "../../components/Balance";
 import ServicesSection from "../../components/ServicesSection";
 
-const Home = () => {
+const Dashboard = () => {
 
   return (
     <div className="flex flex-col gap-10 px-24">
@@ -13,4 +13,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Dashboard;

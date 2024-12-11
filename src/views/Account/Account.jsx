@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/slices/authSlice";
 import { useEffect, useState, useRef } from "react";
-import ProfilePicture from "../../assets/Profile Photo.png";
+import ProfilePicture from "../../assets//img/Profile Photo.png";
 import { useNavigate } from "react-router-dom";
 import profileService from "../../service/profileService";
 import { setProfile } from "../../redux/slices/profileSlice";
 
-const Akun = () => {
+const Account = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const profile = useSelector((state) => state.profile.profile);
@@ -32,7 +32,7 @@ const Akun = () => {
       dispatch(setProfile(profileRes.data.data));
       setIsEdit(false);
     } catch (error) {
-      console.log({ error });
+      // 
     } finally {
       setIsLoading(false);
     }
@@ -49,7 +49,7 @@ const Akun = () => {
         dispatch(setProfile(profileRes.data.data));
       }
     } catch (error) {
-      console.log({ error });
+      //
     }
   };
 
@@ -61,7 +61,7 @@ const Akun = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    localStorage.removeItem("token_sims_ppob");
+    localStorage.removeItem("token");
     navigate("/");
   };
 
@@ -81,7 +81,7 @@ const Akun = () => {
           />
           <button
             type="button"
-            onClick={() => fileInputRef.current.click()} 
+            onClick={() => fileInputRef.current.click()}
             className="absolute bottom-0 right-0 bg-white rounded-full p-1 shadow-md"
           >
             <PencilIcon size={16} className="text-gray-600" />
@@ -95,9 +95,9 @@ const Akun = () => {
       <input
         type="file"
         accept="image/*"
-        ref={fileInputRef} 
-        style={{ display: "none" }} 
-        onChange={handleImageChange} 
+        ref={fileInputRef}
+        style={{ display: "none" }}
+        onChange={handleImageChange}
       />
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -140,7 +140,7 @@ const Akun = () => {
             disabled={isLoading}
             className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-40"
           >
-            {isLoading ? 'Simpan...' : 'Simpan'}
+            {isLoading ? "Simpan..." : "Simpan"}
           </button>
         ) : (
           <>
@@ -166,4 +166,4 @@ const Akun = () => {
   );
 };
 
-export default Akun;
+export default Account;

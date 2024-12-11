@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NameBalanceSection from "../../components/NameBalanceSection";
+import NameBalanceSection from "../../components/Balance";
 import transactionService from "../../service/transactionService";
 import { Banknote, CheckCircle, XCircle } from "lucide-react";
-import Logo from "../../assets/Logo.png";
-import formatNumber from "../../utils/formatNumber";
+import Logo from "../../assets/img/Logo.png";
+import { formatNumber } from "../../utils/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { subtractBalance } from "../../redux/slices/balanceSlice";
 
@@ -34,7 +34,6 @@ const Pembayaran = () => {
       dispatch(subtractBalance(service.service_tariff));
       setShowModal(true);
     } catch (error) {
-      console.log(error);
       setModalContent({ type: "failed", data: error.response.data.message });
       setShowModal(true);
     }

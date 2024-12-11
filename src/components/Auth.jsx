@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useCallback } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import Layout from "./Layout";
@@ -16,7 +15,7 @@ const PrivateRoute = ({ element: Component }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const token = localStorage.getItem("token_sims_ppob");
+  const token = localStorage.getItem("token");
 
   const retrieveInformation = useCallback(async () => {
     try {
@@ -33,7 +32,6 @@ const PrivateRoute = ({ element: Component }) => {
       dispatch(setServices(serviceRes.data.data));
       dispatch(setBalance(balanceRes.data.data.balance));
     } catch (error) {
-      console.log({ error });
       if (
         error.response.data.message ===
         "Token tidak tidak valid atau kadaluwarsa"

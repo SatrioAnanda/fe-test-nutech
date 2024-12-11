@@ -1,9 +1,9 @@
 import { useState } from "react";
-import NameBalanceSection from "../../components/NameBalanceSection";
+import NameBalanceSection from "../../components/Balance";
 import transactionService from "../../service/transactionService";
 import { Banknote, CheckCircle, XCircle } from "lucide-react";
-import Logo from "../../assets/Logo.png";
-import formatNumber from "../../utils/formatNumber";
+import Logo from "../../assets/img/Logo.png";
+import { formatNumber } from "../../utils/utils";
 import { useDispatch } from "react-redux";
 import { setBalance } from "../../redux/slices/balanceSlice";
 
@@ -31,7 +31,6 @@ const TopUp = () => {
       dispatch(setBalance(res.data.data.balance));
       setShowModal(true);
     } catch (error) {
-      console.log(error);
       setModalContent({ type: "failed", data: error.response.data.message });
       setShowModal(true);
     }

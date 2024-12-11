@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import IllustrasiLogin from "../../assets/Illustrasi Login.png";
-import Logo from "../../assets/Logo.png";
-import Form from "./components/Form";
+import IllustrasiLogin from "../../assets/img/Illustrasi Login.png";
+import Logo from "../../assets/img/Logo.png";
 import { X } from "lucide-react";
 import { useState } from "react";
+import Form from "./components/Form";
 
-const Register = () => {
+const Login = () => {
   const [errMsg, setErrMsg] = useState(null);
   return (
     <div className="flex h-lvh">
@@ -14,18 +14,15 @@ const Register = () => {
           <div className="w-full max-w-md">
             <div className="flex items-center justify-center mb-8 gap-2">
               <img src={Logo} width={28} height={28} alt="" />
-              <h1 className="text-xl font-bold">
-                SIMS PPOB M
-              </h1>
+              <h1 className="text-xl font-bold">SIMS PPOB</h1>
             </div>
-
             <h2 className="text-2xl font-bold text-center mb-8">
-              Lengkapi data untuk membuat akun
+              Masuk atau buat akun untuk memulai
             </h2>
             <Form setErrMsg={setErrMsg} />
             <p className="text-center mt-4">
-              sudah punya akun? login{" "}
-              <Link to="/login" className="text-red-500 font-semibold">
+              belum punya akun? registrasi{" "}
+              <Link to="/register" className="text-red-500 font-semibold">
                 di sini
               </Link>
             </p>
@@ -43,16 +40,14 @@ const Register = () => {
         </div>
       </div>
       <div className="flex-1">
-        <div className="w-full h-full">
-          <img
-            src={IllustrasiLogin}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <img
+          src={IllustrasiLogin}
+          alt="Illustrasi Login"
+          className="w-full h-full object-cover"
+        />
       </div>
     </div>
   );
 };
 
-export default Register;
+export default Login;

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import IllustrasiLogin from "../../assets/Illustrasi Login.png";
-import Logo from "../../assets/Logo.png";
+import IllustrasiLogin from "../../assets/img/Illustrasi Login.png";
+import Logo from "../../assets/img/Logo.png";
+import Form from "./components/Form";
 import { X } from "lucide-react";
 import { useState } from "react";
-import Form from "./components/Form";
 
-const Login = () => {
+const Register = () => {
   const [errMsg, setErrMsg] = useState(null);
   return (
     <div className="flex h-lvh">
@@ -15,16 +15,17 @@ const Login = () => {
             <div className="flex items-center justify-center mb-8 gap-2">
               <img src={Logo} width={28} height={28} alt="" />
               <h1 className="text-xl font-bold">
-                SIMS PPOB 
+                SIMS PPOB
               </h1>
             </div>
+
             <h2 className="text-2xl font-bold text-center mb-8">
-              Masuk atau buat akun untuk memulai
+              Lengkapi data untuk membuat akun
             </h2>
             <Form setErrMsg={setErrMsg} />
             <p className="text-center mt-4">
-              belum punya akun? registrasi{" "}
-              <Link to="/register" className="text-red-500 font-semibold">
+              sudah punya akun? login{" "}
+              <Link to="/login" className="text-red-500 font-semibold">
                 di sini
               </Link>
             </p>
@@ -54,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

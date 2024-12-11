@@ -1,6 +1,6 @@
 import axios from "axios";
 import baseUrl from "./baseUrl";
-import store from "../store";
+import store from "../redux/store";
 
 const axiosInstance = axios.create({
   baseURL: baseUrl(),
@@ -9,7 +9,6 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = store.getState().auth.token;
-
     if (token) {
       config.headers["Authorization"] = `Bearer ${token}`;
     }

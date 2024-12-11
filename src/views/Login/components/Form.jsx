@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 import { Lock, Eye, AtSign } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -25,7 +25,7 @@ const Form = ({ setErrMsg }) => {
     try {
       const res = await authService.login(data);
       dispatch(loginSuccess({ token: res.data.data.token }));
-      localStorage.setItem('token_sims_ppob', res.data.data.token)
+      localStorage.setItem('token', res.data.data.token)
       navigate("/");
     } catch (error) {
       setErrMsg(error.response.data.message);

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { User, Lock, Eye, AtSign } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

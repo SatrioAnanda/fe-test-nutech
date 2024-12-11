@@ -1,4 +1,4 @@
-export default function formatDate(dateString) {
+export function formatDate(dateString) {
   const date = new Date(dateString);
   const options = {
     year: "numeric",
@@ -24,3 +24,9 @@ export default function formatDate(dateString) {
 
   return `${monthDay} ${year} • ${time} WIB`;
 }
+
+
+export function formatNumber(num) {
+    return Number(num).toLocaleString("id-ID");
+  }
+  

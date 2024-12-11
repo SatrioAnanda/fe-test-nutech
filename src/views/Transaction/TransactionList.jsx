@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import NameBalanceSection from "../../components/NameBalanceSection";
+import NameBalanceSection from "../../components/Balance";
 import transactionService from "../../service/transactionService";
-import formatNumber from "../../utils/formatNumber";
-import formatDate from "../../utils/formatDate";
+import { formatNumber, formatDate } from "../../utils/utils";
 
-const Transaction = () => {
+const TransactionList = () => {
   const [limit, setLimit] = useState(5);
   const [histories, setHistories] = useState([]);
 
@@ -14,7 +13,7 @@ const Transaction = () => {
         const res = await transactionService.getHistory({ limit });
         setHistories(res.data.data.records);
       } catch (error) {
-        console.log({ error });
+        // 
       }
     };
     getHistory();
@@ -54,9 +53,9 @@ const Transaction = () => {
             </div>
           </div>
         ))}
-         <div className="flex justify-center mt-6 mb-10">
-          <button 
-            onClick={() => setLimit(prevLimit => prevLimit + 5)} 
+        <div className="flex justify-center mt-6 mb-10">
+          <button
+            onClick={() => setLimit((prevLimit) => prevLimit + 5)}
             className="px-4 py-2 text-red-500 font-semibold rounded-md hover:bg-red-50 transition-colors duration-300"
           >
             Show more
@@ -67,4 +66,4 @@ const Transaction = () => {
   );
 };
 
-export default Transaction;
+export default TransactionList;

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/img/Logo.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -12,9 +12,9 @@ const Navbar = () => {
       <div className="flex items-center gap-8">
         <Link
           className={`text-lg font-bold ${
-            location.pathname === "/topup" ? "text-red-500" : "text-gray-500"
+            location.pathname === "/top-up" ? "text-red-500" : "text-gray-500"
           }`}
-          to="/topup"
+          to="/top-up"
         >
           Top Up
         </Link>
@@ -30,9 +30,9 @@ const Navbar = () => {
         </Link>
         <Link
           className={`text-lg font-bold ${
-            location.pathname === "/akun" ? "text-red-500" : "text-gray-500"
+            location.pathname === "/account" ? "text-red-500" : "text-gray-500"
           }`}
-          to="/akun"
+          to="/account"
         >
           Akun
         </Link>
