@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const ServicesSection = () => {
+const Services= () => {
   const services = useSelector((state) => state.services.services);
   return (
     <div className="flex w-full gap-2 justify-between">
@@ -21,4 +21,5 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default Services
+;

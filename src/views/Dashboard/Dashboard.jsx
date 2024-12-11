@@ -1,6 +1,6 @@
 import Banners from "../../components/Banners";
 import NameBalanceSection from "../../components/Balance";
-import ServicesSection from "../../components/ServicesSection";
+import ServicesSection from "../../components/Services";
 
 const Dashboard = () => {
 
