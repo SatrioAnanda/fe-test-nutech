@@ -10,7 +10,7 @@ const NameBalanceSection = () => {
   const balance = useSelector((state) => state.balance).balance;
 
   return (
-    <div className="flex">
+    <div className="flex" style={{ marginTop: "25px", marginBottom: "25px" }}>
       <div className="flex-1 flex flex-col">
         <div className="mb-2">
           <img

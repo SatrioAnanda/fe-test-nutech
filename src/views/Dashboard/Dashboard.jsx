@@ -1,13 +1,13 @@
 import Banners from "../../components/Banners";
-import NameBalanceSection from "../../components/Balance";
-import ServicesSection from "../../components/Services";
+import Balance from "../../components/Balance";
+import Services from "../../components/Services";
 
 const Dashboard = () => {
 
   return (
     <div className="flex flex-col gap-10 px-24">
-      <NameBalanceSection />
-      <ServicesSection />
+      <Balance />
+      <Services />
       <Banners />
     </div>
   );

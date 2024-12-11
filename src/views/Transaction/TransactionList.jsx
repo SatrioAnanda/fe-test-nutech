@@ -4,7 +4,7 @@ import transactionService from "../../service/transactionService";
 import { formatNumber, formatDate } from "../../utils/utils";
 
 const TransactionList = () => {
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(3);
   const [histories, setHistories] = useState([]);
 
   useEffect(() => {
